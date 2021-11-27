@@ -7,11 +7,11 @@ const routes: Routes = [
     path: '',
     component: ContentLayoutComponent,
     children: [
-      // {
-      //   path: '',
-      //   loadChildren: () =>
-      //     import('./modules/main-landing/main-landing.module').then((m) => m.MainLandingModule),
-      // },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./modules/main/main.module').then((m) => m.MainModule),
+      },
       // {
       //   path: 'not-found',
       //   loadChildren: () =>
