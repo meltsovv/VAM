@@ -1,0 +1,47 @@
+<form class="select-style-shadow" [formGroup]='shadow'>
+  <p>Горизонтальне зміщення</p>
+  <mat-slider
+  thumbLabel
+  [displayWith]="styleRenderingService.formatSliderRadius"
+  tickInterval="1"
+  step="1"
+  min="-100"
+  max="100"
+  aria-label="units"  formControlName='horizontal'>
+</mat-slider>
+<p>Вертикальне зміщення</p>
+<mat-slider
+  thumbLabel
+  [displayWith]="styleRenderingService.formatSliderRadius"
+  tickInterval="1"
+  step="1"
+  min="-100"
+  max="100"
+  aria-label="units"  formControlName='vertical'>
+</mat-slider>
+<p>Розмиття</p>
+<mat-slider
+  thumbLabel
+  [displayWith]="styleRenderingService.formatSliderRadius"
+  tickInterval="1"
+  step="1"
+  min="0"
+  max="100"
+  aria-label="units"  formControlName='blur'>
+</mat-slider>
+<p>Розтягування</p>
+<mat-slider
+  thumbLabel
+  [displayWith]="styleRenderingService.formatSliderRadius"
+  tickInterval="1"
+  step="1"
+  min="-100"
+  max="100"
+  aria-label="units"  formControlName='stretching'>
+</mat-slider>
+<mat-form-field appearance="outline" >
+  <mat-label>Колір тіні</mat-label>
+  <input matInput formControlName='shadowColor'  type="color">
+  <mat-icon matSuffix>palette</mat-icon>
+</mat-form-field>
+</form>

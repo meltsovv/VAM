@@ -1,0 +1,50 @@
+.create-header {
+  display: flex;
+  max-height: 100px;
+  background-color: #fafafa;
+  padding: 10px;
+  .create-header-log {
+    width: 30%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    img {
+      height: 50px;
+    }
+    h1 {
+      margin: auto 5px;
+    }
+  }
+  .create-header-nav {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    .create-header-item {
+      margin-left: 45px;
+      display: block;
+      transition: all 1s ease;
+      padding: 0 5px;
+    }
+    .create-header-item:hover {
+      cursor: pointer;
+      background: rgb(235, 235, 235);
+
+    }
+  }
+  .create-header-custom {
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    mat-icon {
+      cursor: pointer;
+      display: block;
+      font-size: 25px;
+      margin-left: 10px;
+    }
+  }
+}
+.create-header-fill-data {
+  margin-top: 30px;
+}

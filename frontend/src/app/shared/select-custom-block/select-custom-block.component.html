@@ -1,0 +1,42 @@
+<form [formGroup]="customBlock">
+  <mat-form-field appearance="outline" >
+    <mat-label>Задній фон</mat-label>
+    <input matInput formControlName='background'  type="color">
+    <mat-icon matSuffix>palette</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label>Колір тексту</mat-label>
+    <input matInput formControlName='color'  type="color">
+    <mat-icon matSuffix>palette</mat-icon>
+  </mat-form-field>
+  <p>Заокруглення</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="100"
+    aria-label="units"  formControlName='borderRadius'>
+  </mat-slider>
+  <p>Висота</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="100"
+    aria-label="units"  formControlName='height'>
+  </mat-slider>
+  <p>Ширина</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="100"
+    aria-label="units"  formControlName='width'>
+  </mat-slider>
+</form>

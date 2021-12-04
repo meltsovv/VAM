@@ -1,0 +1,17 @@
+<div class="select-style-options">
+  <form class="select-style-fill-data" [formGroup]="form">
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="Загальні стилі для заголовку">
+        <app-select-custom-block  (customBlockStyles)="getCustomBlockStyles($event)"></app-select-custom-block>
+        <app-select-border (borderStyles)="getBorderStyles($event)"></app-select-border>
+      </mat-tab>
+      <mat-tab label="Тінь заголовка">
+        <app-select-shadow (shadowStyles)="getShadowStyle($event)"></app-select-shadow>
+      </mat-tab>
+      <mat-tab label="Стилі навігації">
+        <app-select-button (buttonStyles)="getButtonStyles($event)"></app-select-button>
+        <app-select-border (borderStyles)="getBorderStylesForButton($event)"></app-select-border>
+      </mat-tab>
+    </mat-tab-group>
+  </form>
+</div>

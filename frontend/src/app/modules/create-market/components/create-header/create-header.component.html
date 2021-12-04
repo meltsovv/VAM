@@ -1,0 +1,69 @@
+<header class="create-header"
+  [style.background]="styles.customBlock.background"
+  [style.color]="styles.customBlock.color"
+  [style.border-radius.px]="styles.customBlock.borderRadius"
+  [style.height.px]="styles.customBlock.height"
+  [style.box-shadow]="styleRenderingService.getShadow(styles.shadow)"
+  [style.border-width.px]="styles.border.width"
+  [style.border-style]="styles.border.borderStyle"
+  [style.border-color]="styles.border.color"
+  >
+  <div class="create-header-log">
+    <img [src]="linkToLogo" alt="Logo" *ngIf="form.value.logoMarket.isLogo">
+    <h1 *ngIf="form.value.nameMarket.isName">{{form.value.nameMarket.name}}</h1>
+  </div>
+  <ul class="create-header-nav">
+    <li class="create-header-item" *ngFor="let count of getArrayWithCount(form.value.categoryMarket.countCategory)"
+    [style.background]="styles.button.background"
+    [style.color]="styles.button.color"
+    [style.border-radius.px]="styles.button.borderRadius"
+    [style.height.px]="styles.button.height"
+    [style.line-height.px]="styles.button.height"
+    [style.font-size.px]="styles.button.fontSize"
+    [style.font-weight]="styles.button.fontWeight"
+    [style.padding-left.px]="styles.button.padding"
+    [style.padding-right.px]="styles.button.padding"
+    [style.border-width.px]="styles.buttonBorder.width"
+    [style.border-style]="styles.buttonBorder.borderStyle"
+    [style.border-color]="styles.buttonBorder.color"
+    >lorem</li>
+  </ul>
+  <div class="create-header-custom">
+    <mat-icon>search</mat-icon>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>person</mat-icon>
+    <mat-icon>shopping_cart</mat-icon>
+  </div>
+</header>
+<div>
+  <button mat-button matStepperNext (click)='saveHeaderStyles()'>Save</button>
+</div>
+<form class="create-header-fill-data" [formGroup]="form">
+  <div class="create-header-fill-name" formGroupName="nameMarket">
+    <mat-form-field appearance="outline" >
+      <mat-label>Назва магазину</mat-label>
+      <input matInput formControlName='name'>
+      <mat-icon matSuffix>edit</mat-icon>
+    </mat-form-field>
+    <mat-slide-toggle formControlName='isName'>Показувати назву?</mat-slide-toggle>
+  </div>
+  <div class="create-header-fill-name" formGroupName="logoMarket">
+    <label class="image-upload-container btn btn-bwm">
+      <span>Select Image</span>
+      <input #imageInput
+             type="file"
+             accept="image/*"
+             (change)="processFile(imageInput)">
+    </label>
+    <mat-slide-toggle formControlName='isLogo'>Показувати лого?</mat-slide-toggle>
+  </div>
+  <div class="create-header-category" formGroupName="categoryMarket">
+    <mat-form-field appearance="outline">
+      <mat-label>Кількість відображаючих категорії</mat-label>
+      <input matInput formControlName='countCategory'>
+      <mat-icon matSuffix>edit</mat-icon>
+      <mat-error *ngIf="form.controls.categoryMarket.invalid">Діапазон від 0 до 5</mat-error>
+    </mat-form-field>
+  </div>
+  <app-select-style-for-header (styles)='editStyles($event)'></app-select-style-for-header>
+</form>

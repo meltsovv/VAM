@@ -12,6 +12,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/main/main.module').then((m) => m.MainModule),
       },
+      {
+        path: 'create',
+        loadChildren: () =>
+          import('./modules/create-market/create-market.module').then((m) => m.CreateMarketModule),
+      },
       // {
       //   path: 'not-found',
       //   loadChildren: () =>

@@ -1,0 +1,61 @@
+<form class="select-style-nav" [formGroup]='button'>
+  <mat-form-field appearance="outline" >
+    <mat-label>Колір тексту</mat-label>
+    <input matInput formControlName='color'  type="color">
+    <mat-icon matSuffix>palette</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline" >
+    <mat-label>Задній фон</mat-label>
+    <input matInput formControlName='background'  type="color">
+    <mat-icon matSuffix>palette</mat-icon>
+  </mat-form-field>
+  <p>Розмір шрифту</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="1"
+    max="35"
+    aria-label="units"  formControlName='fontSize'>
+  </mat-slider>
+  <p>Жирність шрифту</p>
+  <mat-slider
+    thumbLabel
+    tickInterval="1"
+    step="100"
+    min="200"
+    max="900"
+    aria-label="units"  formControlName='fontWeight'>
+  </mat-slider>
+  <p>Заокруглення</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="100"
+    aria-label="units"  formControlName='borderRadius'>
+  </mat-slider>
+  <p>Висота</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="80"
+    aria-label="units"  formControlName='height'>
+  </mat-slider>
+  <p>Відступи з боку</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="1"
+    step="1"
+    min="0"
+    max="30"
+    aria-label="units"  formControlName='padding'>
+  </mat-slider>
+</form>

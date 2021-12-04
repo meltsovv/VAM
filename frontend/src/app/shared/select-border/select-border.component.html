@@ -1,0 +1,34 @@
+<form class="select-style-border" [formGroup]='border'>
+  <p>Ширина кордону</p>
+  <mat-slider
+    thumbLabel
+    [displayWith]="styleRenderingService.formatSliderRadius"
+    tickInterval="12"
+    step="1"
+    min="0"
+    max="5"
+    aria-label="units"  formControlName='width'>
+  </mat-slider>
+  <mat-form-field appearance="outline" >
+    <mat-label>Колір кордону</mat-label>
+    <input matInput formControlName='color'  type="color">
+    <mat-icon matSuffix>palette</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Лінія</mat-label>
+    <mat-select formControlName='borderStyle'>
+      <mat-option [value]="'solid'">
+        solid
+      </mat-option>
+      <mat-option [value]="'dashed'">
+        dashed
+      </mat-option>
+      <mat-option [value]="'double'">
+        double
+      </mat-option>
+      <mat-option [value]="'ridge'">
+        ridge
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
