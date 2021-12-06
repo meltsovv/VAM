@@ -1,11 +1,11 @@
 <mat-stepper linear #stepper>
   <mat-step>
-    <ng-template matStepLabel>Розпочати</ng-template>
+    <ng-template matStepLabel>Get started</ng-template>
     <app-create-get-started></app-create-get-started>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Заголовок сайту</ng-template>
-    <app-create-header></app-create-header>
+    <ng-template matStepLabel>Design</ng-template>
+    <router-outlet></router-outlet>
   </mat-step>
   <mat-step>
   </mat-step>

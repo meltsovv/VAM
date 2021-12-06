@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateHeaderComponent } from './components/create-header/create-header.component';
+import { CreateHeaderComponent } from './components/create-market-design/components/create-header/create-header.component';
 import { CreateMarketComponent } from './create-market.component';
 
 const routes: Routes = [
@@ -9,8 +9,9 @@ const routes: Routes = [
     component: CreateMarketComponent,
     children: [
       {
-        path: 'header',
-        component: CreateHeaderComponent,
+        path: '',
+        loadChildren: () =>
+          import('./components/create-market-design/create-market-design.module').then((m) => m.CreateMarketDesignModule),
       },
       // {
       //   path: '/some-router',

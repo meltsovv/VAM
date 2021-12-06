@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { SelectStyleComponentsEnum } from 'src/app/core/types/enums/select-style-components.enum';
 import { ImageSnippet } from 'src/app/core/types/others/image-snippet'
+import { SelectStyleMenuOptions } from 'src/app/core/types/others/select-style-menu-options';
 import { HeaderStyles } from 'src/app/core/types/styles/header.styles';
 import { StyleRenderingService } from 'src/app/services/style-rendering.service';
+import { SelectStyleComponent } from 'src/app/shared/select-style/select-style.component';
 @Component({
   selector: 'app-create-header',
   templateUrl: './create-header.component.html',
@@ -11,6 +15,13 @@ import { StyleRenderingService } from 'src/app/services/style-rendering.service'
 export class CreateHeaderComponent implements OnInit {
   form: FormGroup;
 
+  options: SelectStyleMenuOptions[] = [{
+    titleButton: 'Background',
+    path: ['header','background'],
+    icon: 'palette',
+    components: [SelectStyleComponentsEnum.SelectColor],
+  }]
+
   linkToLogo: string = 'https://cdn.logo.com/hotlink-ok/logo-social.png'
   nameMarket = new FormControl('');
 
@@ -18,7 +29,7 @@ export class CreateHeaderComponent implements OnInit {
 
   styles: HeaderStyles = new HeaderStyles()
 
-  constructor(fb: FormBuilder, public styleRenderingService: StyleRenderingService) {
+  constructor(fb: FormBuilder, public styleRenderingService: StyleRenderingService, private bottomSheet: MatBottomSheet) {
     this.form = fb.group({
       nameMarket: fb.group ({
         name: ['Logo', [Validators.required]],
@@ -60,7 +71,7 @@ export class CreateHeaderComponent implements OnInit {
     return array;
   }
 
-  saveHeaderStyles(): void {
-    console.log(this.styles);
+  openBottomSheet(): void {
+    this.bottomSheet.open(SelectStyleComponent);
   }
 }

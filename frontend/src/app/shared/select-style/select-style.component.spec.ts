@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectStyleForHeaderComponent } from './select-style-for-header.component';
+import { SelectStyleComponent } from './select-style.component';
 
 describe('SelectStyleComponent', () => {
-  let component: SelectStyleForHeaderComponent;
-  let fixture: ComponentFixture<SelectStyleForHeaderComponent>;
+  let component: SelectStyleComponent;
+  let fixture: ComponentFixture<SelectStyleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectStyleForHeaderComponent ]
+      declarations: [ SelectStyleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectStyleForHeaderComponent);
+    fixture = TestBed.createComponent(SelectStyleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

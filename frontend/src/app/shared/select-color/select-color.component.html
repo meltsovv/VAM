@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" >
+  <mat-label>{{title}}</mat-label>
+  <input matInput [formControl]='control'  type="color">
+  <mat-icon matSuffix>palette</mat-icon>
+</mat-form-field>
+<section class="example-section">
+  <mat-checkbox class="example-margin" [formControl]="checked">Checked</mat-checkbox>
+</section>

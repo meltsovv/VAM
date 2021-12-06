@@ -1,0 +1,4 @@
+<div class="select-style-options">
+  <app-select-color [color]='"#ffffff"' [title]='"Color"' *ngIf="styleRenderingService.bottomSheetsOption.components.includes(selectStyleComponentsEnum.SelectColor)" (change)='change($event)'></app-select-color>
+  <button mat-button color="accent" (click)='save()'>Save</button>
+</div>

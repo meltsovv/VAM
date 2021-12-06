@@ -1,5 +1,5 @@
 <header class="create-header"
-  [style.background]="styles.customBlock.background"
+  [style.background]="styleRenderingService.globalStyles.header.background.show ? styleRenderingService.globalStyles.header.background.background: '#ffffff00'"
   [style.color]="styles.customBlock.color"
   [style.border-radius.px]="styles.customBlock.borderRadius"
   [style.height.px]="styles.customBlock.height"
@@ -8,6 +8,7 @@
   [style.border-style]="styles.border.borderStyle"
   [style.border-color]="styles.border.color"
   >
+  <app-select-edit-menu [options]='options' class="edit-header"></app-select-edit-menu>
   <div class="create-header-log">
     <img [src]="linkToLogo" alt="Logo" *ngIf="form.value.logoMarket.isLogo">
     <h1 *ngIf="form.value.nameMarket.isName">{{form.value.nameMarket.name}}</h1>
@@ -29,13 +30,13 @@
     >lorem</li>
   </ul>
   <div class="create-header-custom">
-    <mat-icon>search</mat-icon>
+    <mat-icon (click)='openBottomSheet()'>search</mat-icon>
     <mat-icon>favorite</mat-icon>
     <mat-icon>person</mat-icon>
     <mat-icon>shopping_cart</mat-icon>
   </div>
 </header>
-<div>
+<!-- <div>
   <button mat-button matStepperNext (click)='saveHeaderStyles()'>Save</button>
 </div>
 <form class="create-header-fill-data" [formGroup]="form">
@@ -66,4 +67,4 @@
     </mat-form-field>
   </div>
   <app-select-style-for-header (styles)='editStyles($event)'></app-select-style-for-header>
-</form>
+</form> -->

@@ -1,7 +1,7 @@
 import { BorderStyle } from "../enums/border-style.enum";
 
 export class Border {
-  color: string = '#000000';
+  color: string = '#fff';
   borderStyle: BorderStyle = BorderStyle.Solid;
   width: number = 1;
 }

@@ -3,6 +3,20 @@
   max-height: 100px;
   background-color: #fafafa;
   padding: 10px;
+  position: relative;
+  margin-top: 30px;
+  &:hover{
+    .edit-header {
+      display: block;
+    }
+  }
+  .edit-header {
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    z-index: 99;
+    display: none;
+  }
   .create-header-log {
     width: 30%;
     display: flex;
